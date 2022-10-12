@@ -1,0 +1,36 @@
+<html lang="ja">
+  <meta charset="utf-8"> <!-- OBSのブラウザソース指定するときはcharset指定必須！じゃないと文字化けする -->
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@600&display=swap" rel="stylesheet">
+
+  <style>
+    #view_clock {
+      font-family: 'Rubik', sans-serif;
+      font-size: 10rem; /*←ここをかえる*/
+    }
+  </style>
+
+  <span id="view_clock"></span>
+
+  <script type="text/javascript">
+    timerID = setInterval('clock()', 500);
+
+    function clock() {
+      document.getElementById("view_clock").innerHTML = getNow();
+    }
+
+    function getNow() {
+      var now = new Date();
+      // var year = now.getFullYear();
+      // var month = now.getMonth() + 1;
+      // var day = now.getDay();
+      var hour = now.getHours();
+      var min = now.getMinutes();
+      // var sec = now.getSeconds();
+      var s = hour + ":" + min
+      return s
+    }
+  </script>
+</html>
